@@ -16,7 +16,7 @@ void Bot::bot() {
     //create slash command event (/flower)
     bot.on_slashcommand([] (const dpp::slashcommand_t &event) {
         if(event.command.get_command_name() == "flowers") {
-            event.reply("Flowers are pretty!");
+            event.reply("Flowers are pretty and nice to look at!");
         }
     });
 
