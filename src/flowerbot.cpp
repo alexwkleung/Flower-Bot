@@ -20,7 +20,7 @@ void Bot::bot() {
     }
 
     //create cluster object (bot)
-    dpp::cluster bot(TOKEN);
+    dpp::cluster bot(this->TOKEN);
 
     //log bot to output stream
     bot.on_log(dpp::utility::cout_logger());
@@ -113,6 +113,122 @@ void Bot::bot() {
         }
     });
     
+    //create slash command event (/anemone)
+    bot.on_slashcommand([] (const dpp::slashcommand_t &event) {
+        if(event.command.get_command_name() == "anemone") {
+            event.reply(
+                "Anemone, (genus Anemone), also called pasqueflower or windflower, any of more than 100 species of perennial plants in the buttercup family (Ranunculaceae). Many colourful varieties of the tuberous poppylike anemone, A. coronaria, are grown for the garden and florist's trade. Popular spring-flowering anemones, especially for naturalizing, are A. apennina, A. blanda, and A. pavonina. Other species, such as the Japanese anemone (A. hupehenis, or A. japonica), are favourite border plants for autumn flowering. Some species whose fruits bear a long plumose structure are placed in a separate section, Pulsatilla, often given the rank of genus. Anemones are distributed throughout the world but occur most commonly in woodlands and meadows of the north temperate zone. Many varieties are cultivated in gardens for ther colourful flowers. \n\nRead more here: https://www.britannica.com/plant/anemone"
+            );
+        }
+    });
+
+    //create slash command event (/daffodil)
+    bot.on_slashcommand([] (const dpp::slashcommand_t &event) {
+        if(event.command.get_command_name() == "daffodil") {
+            event.reply(
+                "Daffodil, (Narcissus pseudonarcissus), also called common daffodil or trumpet narcissus, bulb-forming plant in the armaryllis family (Armaryllidaceae), widely cultivated for its trumpetlike flowers. Daffodils are native to norther Europe and are grown in temperate climates around the world. The draffodil's popularity has resulted in the producted of many varieties; in addition to the classic yellow form, the trumpet and petals may themselves be of contrasting yellow, white, pink, or orange. \n\nRead more here: https://www.britannica.com/plant/daffodil"
+            );
+        }
+    });
+
+    //create slash command event (/poppy)
+    bot.on_slashcommand([] (const dpp::slashcommand_t &event) {
+        if(event.command.get_command_name() == "poppy") {
+            event.reply(
+                "Poppy, any of several flowering plants of the poppy family (Papaveracceae), especially species of the genus Papaver. Most poppies are found in the Northern Hemisphere, and several species of poppies are cultivated as garden ornamentals. \n\nPoppies have lobed or dissected leavs and milky sap. The buds are often nodding and are borne on solitary stalks. The flowers have four to six petals with numerous staments surrounding the ovary. The two sepals usually drop off as the petals unfold. The ovary develops into a spherical capsule topped by a disk formed by the stigmas. The many small seeds escape from pores beneath the disk when the capsule is shaken by the wind. \n\nRead more here: https://www.britannica.com/plant/poppy"
+            );
+        }
+    });
+
+    //create slash command event (/buttercup)
+    bot.on_slashcommand([] (const dpp::slashcommand_t &event) {
+        if(event.command.get_command_name() == "buttercup") {
+            event.reply(
+                "Buttercup, (genus Ranunculus), also called crowfoot, genus of about 300 species of herbaceous flowering plants in the family Ranunculaceae. Buttercups are distribued throughout the world and are especially common in woods and fields of the north temperate zone. \n\nMost buttercups have tuberous or fibrous roots. The flowewrs are solitary or loosely clustered and have green sepals, five to many glossy yellow (sometimes white) petals, and numerous male and female structures (stamens and pistils). Cultivated varieties have been bred in many colours. The leaves are highly variable, depending on the species. \n\nRead more here: https://www.britannica.com/plant/buttercup"
+            );
+        }
+    });
+
+    //create slash command event (/camellia)
+    bot.on_slashcommand([] (const dpp::slashcommand_t &event) {
+        if(event.command.get_command_name() == "camellia") {
+            event.reply(
+                "Camellia, genus of about 250 species of East Asian evergreen shrubs and trees belonging to the tea family (Theaceae), most notable for a few ornamental flowering species and for Camellia sinensis (sometimes called Thea sinensis), the source of tea. \n\nRead more here: https://www.britannica.com/plant/Camellia"
+            );
+        }
+    });
+
+    //create slash command event (/cosmos)
+    bot.on_slashcommand([] (const dpp::slashcommand_t &event) {
+        if(event.command.get_command_name() == "cosmos") {
+            event.reply(
+                "Cosmos, genus of garden plants of the family Asteraceae, containing about 40 species native to tropical America. They have leaves opposite of each other on the stem and heads of flowers that are borne along on long flower stalks or together in an open cluster. \n\nRead more here: https://www.britannica.com/plant/Cosmos-plant-genus"
+            );
+        }
+    });
+
+    //create slash command event (/crocus)
+    bot.on_slashcommand([] (const dpp::slashcommand_t &event) {
+        if(event.command.get_command_name() == "crocus") {
+            event.reply(
+                "Crocus, genus of about 75 low-growing cormose species of plants of the iris family (Iridaceae). Crocuses are native to the Alps, southern Europe, and the Mediterranean area and are widely grown for their cuplike blooms in early spring or fall. Spring-flowering plants have a long floral tube that allows the ovary to remain belowground, sheltered from climatic changes. \n\nRead more here: https://www.britannica.com/plant/Crocus"
+            );
+        }
+    });
+
+    //create slash command event (/sunflower)
+    bot.on_slashcommand([] (const dpp::slashcommand_t &event) {
+        if(event.command.get_command_name() == "sunflower") {
+            event.reply(
+                "Sunflower, (genus Helianthus), genus of nearly 70 species of herbaceous plants of the aster family (Asteraceae). Sunflowers are native primarily to North and South America, and some species are cultivated as ornamentals for their spectacular size and flower heads and for their edible seeds. The Jerusalem artichoke (Helianthus tuberosus) is cultivated for its edible underground tubers. \n\nRead more here: https://www.britannica.com/plant/sunflower-plant"
+            );
+        }
+    });
+
+    //create slash command event (/dandelion)
+    bot.on_slashcommand([] (const dpp::slashcommand_t &event) {
+        if(event.command.get_command_name() == "dandelion") {
+            event.reply(
+                "Dandelion, weedy perennial herb of the genus Taraxacum of the family Asteraceae, native to Eurasia but widespread throughout much of temperate North America. The most familiar species is T. officinale. \n\nRead more here: https://www.britannica.com/plant/dandelion"
+            );
+        }
+    });
+
+    //create slash command event (/jasmine)
+    bot.on_slashcommand([] (const dpp::slashcommand_t &event) {
+        if(event.command.get_command_name() == "jasmine") {
+            event.reply(
+                "Jasmine, (genus Jasminum), also spelled jessamine, genus of about 200 species of fragrant-flowered shrubs and vines of the olive family (Oleacea). The plants are native to tropical and to some temperate areas of the Old World. Several are cultivated as ornamentals. \n\nMost true jasmines have climbing branches without tendrils. The white, yellow, or rarely pink flowers are tubular with a flaring, lobed pinwheel-like form; some double-flowered varieties have been developed. The leaves can be evergreen or deciduous and usually are composed of two or more leaflets, although some species have simple leaves. The fruit in most species is a two-lobed black berry. \n\nRead more here: https://www.britannica.com/plant/jasmine-plant"
+            );
+        }
+    });
+
+    //create slash command event (/blossom)
+    bot.on_slashcommand([] (const dpp::slashcommand_t &event) {
+        if(event.command.get_command_name() == "blossom") {
+            event.reply(
+                "In botany, blossoms are the flowers of stone fruit trees (genus Prunus) and some other plants with a similar appearance that flower profusely for a period of time in spring. \n\nRead more here: https://en.wikipedia.org/wiki/Blossom"
+            );
+        }
+    });
+
+    //create slash command event (/lavender)
+    bot.on_slashcommand([] (const dpp::slashcommand_t &event) {
+        if(event.command.get_command_name() == "lavender") {
+            event.reply(
+                "Lavender, (genus Lavandula), genus of about 30 species of plants in the mint family (Lamiaceae), native to countries bordering the Mediterranean. Lavender species are common in herb gardens for their fragrant leaves and attractive flowers. The plants are widely cultivated for their essential oils, which are used to scent a variety of products. The dried flowers, for example, have been used in sachets to scent chests and closets, and the ancient Romans used lavender in their baths. Lavender is sometimes also used to flavour beverages and sweets and has a number of applications in herbal medicine. English lavender (Lavandula angustifolia), French lavender (L. stoechas), and woolly lavender (L. lanata) are among the most widely cultivated species. \n\nRead more here: https://www.britannica.com/plant/lavender"
+            );
+        }
+    });
+
+    //create slash command event (/rose)
+    bot.on_slashcommand([] (const dpp::slashcommand_t &event) {
+        if(event.command.get_command_name() == "rose") {
+            event.reply(
+                "A rose is either a woody perennial flowering plant of the genus Rosa, in the family Rosaceae, or the flower it bears. There are other three hundred species and tens of thousands of cultivars. They form a group of plants that can be erect shrubs, climbing, or trailing, with stems that are often armed with sharp prickles. Their flowers vary in size and shape and are usually large and showy, in colorus raning from white through yellows and reds. Most species are native to Asia, with smaller numbers native to Europe, North America, and northwestern Africa. Species, cultivars, and hybrids are all widely grown for their beauty and often are fragrant. Roses have acquired cultural significance in many societies. Rose plants range in size from compact, miniature roses, to climbers that can reach seven metres in height. Different species hybridize easily, and this has been used in the development of the wide range of garden roses. \n\nRead more here: https://en.wikipedia.org/wiki/Rose"
+            );
+        }
+    });
     //when bot is ready to be connected
     bot.on_ready([&bot] (const dpp::ready_t &event) {
         //run registered commands once when bot is connected. prevents commands from being 
@@ -128,24 +244,21 @@ void Bot::bot() {
             bot.global_command_create(dpp::slashcommand("Freesia", "Information about the Freesia flower", bot.me.id));
             bot.global_command_create(dpp::slashcommand("Chrysanthemum", "Information about the Chrysanthemum flower", bot.me.id));
             bot.global_command_create(dpp::slashcommand("Gladiolus", "Information about the Gladiolus flower", bot.me.id));
+            bot.global_command_create(dpp::slashcommand("Anemone", "Information about the Anemone flower", bot.me.id));
+            bot.global_command_create(dpp::slashcommand("Daffodil", "Information about the Daffodil flower", bot.me.id));
+            bot.global_command_create(dpp::slashcommand("Poppy", "Information about the Poppy flower", bot.me.id));
+            bot.global_command_create(dpp::slashcommand("Buttercup", "Information about the Buttercup flower", bot.me.id));
+            bot.global_command_create(dpp::slashcommand("Camellia", "Information about the Camellia flower", bot.me.id));
+            bot.global_command_create(dpp::slashcommand("Cosmos", "Information about the Cosmos flower", bot.me.id));
+            bot.global_command_create(dpp::slashcommand("Crocus", "Information about the Crocus flower", bot.me.id));
+            bot.global_command_create(dpp::slashcommand("Sunflower", "Information about the Sunflower", bot.me.id));
+            bot.global_command_create(dpp::slashcommand("Dandelion", "Information about the Dandelion flower", bot.me.id));
+            bot.global_command_create(dpp::slashcommand("Jasmine", "Information about the Jasmine flower", bot.me.id));
+            bot.global_command_create(dpp::slashcommand("Blossom", "Information about the Blossom flower", bot.me.id));
+            bot.global_command_create(dpp::slashcommand("Lavender", "Information about the Lavender flower", bot.me.id));
+            bot.global_command_create(dpp::slashcommand("Rose", "Information about the Rose flower", bot.me.id));
         }
     });
-
-    /*
-    Anemone
-    Daffodil
-    Poppy
-    Buttercup
-    Camellia
-    Cosmos
-    Crocus
-    Sunflower
-    Dandelion
-    Jasmine
-    Blossom
-    Lavender
-    Rose
-    */
 
     //start cluster (bot)
     bot.start(dpp::st_wait);
