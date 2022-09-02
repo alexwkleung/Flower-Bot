@@ -112,6 +112,7 @@ void Bot::bot() {
             );
         }
     });
+    
     //when bot is ready to be connected
     bot.on_ready([&bot] (const dpp::ready_t &event) {
         //run registered commands once when bot is connected. prevents commands from being 
