@@ -3,3 +3,4 @@
 *.dSYM/
 *.o
 build
+src/key.txt

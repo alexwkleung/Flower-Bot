@@ -1,11 +1,23 @@
 #include "flowerbot.h"
 #include "dpp/dpp.h"
 #include <string>
+#include <sstream>
 
 void Bot::bot() {
-    //ADD TOKEN BEFORE USING BOT
-    //*** REMOVE TOKEN BEFORE GIT PUSH! ***
-    this->TOKEN;
+    //open input file stream 
+    //create key.txt in src directory and put key inside. make sure to gitignore it.
+    std::ifstream apikey("../src/key.txt");
+
+    //get content of input file stream and append it to the TOKEN string
+    std::getline(apikey, this->TOKEN);
+
+    //check if input file stream is open (directory check for existence)
+    if(apikey.is_open()) {
+        std::cout << "Directory of input file stream found!" << '\n' << std::flush;
+        std::cout << "Discord API Token (DO NOT SHARE): " << this->TOKEN << '\n' << std::flush << '\n';
+    } else if(!apikey.is_open()) {
+        std::cout << "Directory of input file stream does not exist! Fix the directory and try again." << '\n' << std::flush << '\n';
+    }
 
     //create cluster object (bot)
     dpp::cluster bot(TOKEN);
@@ -23,7 +35,9 @@ void Bot::bot() {
     //create slash command event (/iris)
     bot.on_slashcommand([] (const dpp::slashcommand_t &event) {
         if(event.command.get_command_name() == "iris") {
-            event.reply("Iris description here.");
+            event.reply(
+                "Iris is a genus of 260-300 species of flowering plants with showy flowers. It takes it name from the Greek word for a rainbow, which is also the name for the Greek goddess of the rainbow, Iris. You can read more at https://en.wikipedia.org/wiki/Iris_(plant)"
+                );
         }
     });
 

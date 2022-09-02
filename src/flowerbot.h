@@ -5,7 +5,7 @@
 
 class Bot {
     private:
-        std::string TOKEN;
+        std::string TOKEN{};
 
     public:
         void bot();
