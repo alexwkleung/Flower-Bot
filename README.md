@@ -4,4 +4,4 @@ A Discord bot that tells you information about flowers. This bot could be useful
 
 Written in C++ using the [D++ (DPP) Discord API](https://github.com/brainboxdotcc/DPP).
 
-WIP.
+WIP. I will try to add as many flowers as possible to the list of commands. Later on, I'll add more bot enhancements since slash commands alone aren't very exciting.
