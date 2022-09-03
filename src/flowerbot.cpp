@@ -243,7 +243,7 @@ void Bot::bot() {
     bot.on_message_create([&bot] (const dpp::message_create_t &event) {
         if(event.msg.content == "flower complexity") {
             event.reply(
-                "Flowers are complex and biologically speaking they have a lot going on inside them. :dna:"
+                "Flowers are complex, and biologically speaking they have a lot going on inside them. :dna:"
             );
         }
     });
