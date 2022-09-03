@@ -248,6 +248,15 @@ void FlowerBot::bot() {
         }
     });
 
+    //create slash command event (/petunia)
+    bot.on_slashcommand([] (const dpp::slashcommand_t &event) {
+        if(event.command.get_command_name() == "petunia") {
+            event.reply(
+                "Petunia, genus of about 35 species of flowering plants in the nightshade family (Solanaceae), native to South America. The common garden petunia (Petunia xatkinsiana) is an ornamental plant whose showy trumpet-shaped flowers make it popular for summer flower beds and window boxes. \n\nRead more here: https://www.britannica.com/plant/petunia"
+            );
+        }
+    });
+    
     //create slash command event (/favouriteflowers)
     bot.on_slashcommand([] (const dpp::slashcommand_t &event) {
         if(event.command.get_command_name() == "favouriteflowers") {
@@ -328,6 +337,7 @@ void FlowerBot::bot() {
             bot.global_command_create(dpp::slashcommand("Rose", "Information about the Rose flower", bot.me.id));
             bot.global_command_create(dpp::slashcommand("Bellflower", "Information about the Bellflower", bot.me.id));
             bot.global_command_create(dpp::slashcommand("Primrose", "Information about the Primrose flower", bot.me.id));
+            bot.global_command_create(dpp::slashcommand("Petunia", "Information about the Petunia flower", bot.me.id));
             bot.global_command_create(dpp::slashcommand("FavouriteFlowers", "Flower Bot's favourite flowers", bot.me.id));
         }
     });
