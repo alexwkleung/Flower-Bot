@@ -230,6 +230,24 @@ void Bot::bot() {
         }
     });
 
+    //create slash command event (/favouriteflowers)
+    bot.on_slashcommand([] (const dpp::slashcommand_t &event) {
+        if(event.command.get_command_name() == "favouriteflowers") {
+            event.reply(
+                "Flower Bot likes Irises, Tulips, Lilies, and Lavender flowers!"
+            );
+        }
+    });
+
+    //custom message (flower complexity)
+    bot.on_message_create([&bot] (const dpp::message_create_t &event) {
+        if(event.msg.content == "flower complexity") {
+            event.reply(
+                "Flowers are complex and biologically speaking they have a lot going on inside them. :dna:"
+            );
+        }
+    });
+
     //create embed (!flowerbot)
     bot.on_message_create([&bot] (const dpp::message_create_t &event) {
         if(event.msg.content == "!flowerbot") {
@@ -272,6 +290,7 @@ void Bot::bot() {
             bot.global_command_create(dpp::slashcommand("Blossom", "Information about the Blossom flower", bot.me.id));
             bot.global_command_create(dpp::slashcommand("Lavender", "Information about the Lavender flower", bot.me.id));
             bot.global_command_create(dpp::slashcommand("Rose", "Information about the Rose flower", bot.me.id));
+            bot.global_command_create(dpp::slashcommand("FavouriteFlowers", "Flower Bot's favourite flowers", bot.me.id));
         }
     });
 
