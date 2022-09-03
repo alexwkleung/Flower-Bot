@@ -20,7 +20,7 @@ void Bot::bot() {
     }
 
     //create cluster object (bot)
-    dpp::cluster bot(this->TOKEN);
+    dpp::cluster bot(this->TOKEN, dpp::i_default_intents | dpp::i_message_content);
 
     //log bot to output stream
     bot.on_log(dpp::utility::cout_logger());
@@ -229,6 +229,21 @@ void Bot::bot() {
             );
         }
     });
+
+    //create embed (!flowerbot)
+    bot.on_message_create([&bot] (const dpp::message_create_t &event) {
+        if(event.msg.content == "!flowerbot") {
+            dpp::embed embed1 = dpp::embed().
+                set_color(dpp::colors::sti_blue).
+                set_title("Flower Bot").
+                set_url("https://github.com/alexwkleung/Flower-Bot").
+                set_author("alexwkleung", "https://github.com/alexwkleung", "").
+                set_description("A Discord bot that tells you basic scientific information and biological history about flowers.").
+                set_timestamp(time(0));
+                bot.message_create(dpp::message(event.msg.channel_id, embed1).set_reference(event.msg.id));
+        }
+    });
+
     //when bot is ready to be connected
     bot.on_ready([&bot] (const dpp::ready_t &event) {
         //run registered commands once when bot is connected. prevents commands from being 
