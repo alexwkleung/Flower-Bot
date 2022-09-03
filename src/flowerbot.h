@@ -3,7 +3,7 @@
 
 #include <string>
 
-class Bot {
+class FlowerBot {
     private:
         std::string TOKEN{};
 

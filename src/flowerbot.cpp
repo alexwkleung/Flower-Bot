@@ -3,7 +3,7 @@
 #include <string>
 #include <sstream>
 
-void Bot::bot() {
+void FlowerBot::bot() {
     //open input file stream 
     //create key.txt in src directory and put key inside. make sure to gitignore it.
     std::ifstream apikey("../src/key.txt");
@@ -239,6 +239,24 @@ void Bot::bot() {
         }
     });
 
+    //custom message (thank you flower bot)
+    bot.on_message_create([&bot] (const dpp::message_create_t &event) {
+        if(event.msg.content == "thank you flower bot") {
+            event.reply(
+                "You're welcome. If you want to learn more about flowers, make sure you ask me for more information!"
+            );
+        }
+    });
+
+    //custom message (how reliable is flower bot)
+    bot.on_message_create([&bot] (const dpp::message_create_t &event) {
+        if(event.msg.content == "how reliable is flower bot") {
+            event.reply(
+                "I'm as reliable as your google search. After all, the links and information I provide are from wiki/wikipedia related links, so please take caution and consideration when citing or using them. I am not responsible for any damages."
+            );
+        }
+    });
+
     //custom message (flower complexity)
     bot.on_message_create([&bot] (const dpp::message_create_t &event) {
         if(event.msg.content == "flower complexity") {
@@ -299,9 +317,9 @@ void Bot::bot() {
 }
 
 int main() {
-    Bot b;
+    FlowerBot flb;
 
-    b.bot();
+    flb.bot();
 
     return 0;
 }
