@@ -230,6 +230,24 @@ void FlowerBot::bot() {
         }
     });
 
+    //create slash command event (/bellflower)
+    bot.on_slashcommand([] (const dpp::slashcommand_t &event) {
+        if(event.command.get_command_name() == "bellflower") {
+            event.reply(
+                "Bellflower, (genus Campanula), any of around 420 annual, perennial, and biennial herbs that compose the genus Campanula (family Campanulaceae). Bellflowers have characteristically bell-shaped, usually blue flowers, and many are cultivated as garden ornamentals. They are native mainly to norther temperate regions, Mediterranean areas, and tropical mountains. \n\nRead more here: https://www.britannica.com/plant/bellflower-plant"
+            );
+        }
+    });
+
+    //create slash command event (/primrose)
+    bot.on_slashcommand([] (const dpp::slashcommand_t &event) {
+        if(event.command.get_command_name() == "primrose") {
+            event.reply(
+                "Primrose, flowering plants of the genus Primula of the family Primulaceae, with 490-600 species, chiefly occurring in the Northern Hemisphere in cool or mountainous regions. The plants are low-growing, usually perennial herbs; a few are biennials. Most species grow 25 to 50 cm (10 to 20 inches) tall, but some are as short as 5 cm (2 inches) and others as tall as 1.2 metres (4 feet). Many species are cultivated for their attractive flowers. \n\nRead more here: https://www.britannica.com/plant/primrose-plant"
+            );
+        }
+    });
+
     //create slash command event (/favouriteflowers)
     bot.on_slashcommand([] (const dpp::slashcommand_t &event) {
         if(event.command.get_command_name() == "favouriteflowers") {
@@ -308,6 +326,8 @@ void FlowerBot::bot() {
             bot.global_command_create(dpp::slashcommand("Blossom", "Information about the Blossom flower", bot.me.id));
             bot.global_command_create(dpp::slashcommand("Lavender", "Information about the Lavender flower", bot.me.id));
             bot.global_command_create(dpp::slashcommand("Rose", "Information about the Rose flower", bot.me.id));
+            bot.global_command_create(dpp::slashcommand("Bellflower", "Information about the Bellflower", bot.me.id));
+            bot.global_command_create(dpp::slashcommand("Primrose", "Information about the Primrose flower", bot.me.id));
             bot.global_command_create(dpp::slashcommand("FavouriteFlowers", "Flower Bot's favourite flowers", bot.me.id));
         }
     });
