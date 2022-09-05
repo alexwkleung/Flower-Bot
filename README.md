@@ -44,7 +44,7 @@ cmake --build Flower-Bot/build --config Debug --target all --
 
 Run bot.
 
-You can use the VSCode CMake/CMake Tools extensions for an integrated CMake solution or run the output file from the CLI:
+You can use the VSCode CMake/CMake Tools extensions for an integrated CMake solution or run the output file from the terminal:
 
 ```bash
 cd build
