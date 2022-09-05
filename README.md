@@ -114,6 +114,6 @@ Flower-Bot/build/Flower-Bot
 
 `"flower complexity"`
 
-**Embeds:**
+**Embed commands:**
 
 `!flowerbot`
