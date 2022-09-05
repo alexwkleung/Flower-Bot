@@ -108,11 +108,11 @@ Flower-Bot/build/Flower-Bot
 
 **Custom messages (type without the strings):**
 
-`"thank you flower bot"`
+`"thank you flower bot"` or `"thank you flower bot!"` or `"thanks flower bot"` or `"thanks flower bot!"`
 
-`"how reliable is flower bot"`
+`"how reliable is flower bot"` or `"how reliable is flower bot?"` or `"is flower bot reliable"` or `"is flower bot reliable?"`
 
-`"flower complexity"`
+`"flower complexity"` or `"how complex are flowers"` or `"how complex are flowers?"` or `"are flowers complex"` or `"are flowers complex?"`
 
 **Embed commands:**
 

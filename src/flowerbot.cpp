@@ -268,7 +268,7 @@ void FlowerBot::bot() {
 
     //custom message (thank you flower bot)
     bot.on_message_create([&bot] (const dpp::message_create_t &event) {
-        if(event.msg.content == "thank you flower bot") {
+        if(event.msg.content == "thank you flower bot" || event.msg.content == "thank you flower bot!" || event.msg.content == "thanks flower bot" || event.msg.content == "thanks flower bot!") {
             event.reply(
                 "You're welcome. If you want to learn more about flowers, make sure you ask me for more information!"
             );
@@ -277,7 +277,7 @@ void FlowerBot::bot() {
 
     //custom message (how reliable is flower bot)
     bot.on_message_create([&bot] (const dpp::message_create_t &event) {
-        if(event.msg.content == "how reliable is flower bot") {
+        if(event.msg.content == "how reliable is flower bot" || event.msg.content == "how reliable is flower bot?" || event.msg.content == "is flower bot reliable" || event.msg.content == "is flower bot reliable?") {
             event.reply(
                 "I'm as reliable as your google search. After all, the links and information I provide are from wiki/wikipedia related links, so please take caution and consideration when citing or using them. I am not responsible for any damages."
             );
@@ -286,9 +286,9 @@ void FlowerBot::bot() {
 
     //custom message (flower complexity)
     bot.on_message_create([&bot] (const dpp::message_create_t &event) {
-        if(event.msg.content == "flower complexity") {
+        if(event.msg.content == "flower complexity" || event.msg.content == "how complex are flowers" || event.msg.content == "how complex are flowers?" || event.msg.content == "are flowers complex" || event.msg.content == "are flower complex?") {
             event.reply(
-                "Flowers are complex, and biologically speaking they have a lot going on inside them. :dna:"
+                "Flowers are complex, and biologically speaking they have a lot going on inside them! :dna:"
             );
         }
     });
