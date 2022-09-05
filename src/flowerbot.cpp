@@ -261,7 +261,7 @@ void FlowerBot::bot() {
     bot.on_slashcommand([] (const dpp::slashcommand_t &event) {
         if(event.command.get_command_name() == "favouriteflowers") {
             event.reply(
-                "Flower Bot likes Irises, Tulips, Lilies, and Lavender flowers!"
+                "Flower Bot likes Irises, Tulips, Lilies, Blossoms, and Lavender flowers!"
             );
         }
     });
