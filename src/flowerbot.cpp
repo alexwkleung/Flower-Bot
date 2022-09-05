@@ -86,7 +86,7 @@ void FlowerBot::bot() {
         }
     });
 
-    //create slash command event (/fresia)
+    //create slash command event (/freesia)
     bot.on_slashcommand([] (const dpp::slashcommand_t &event) {
         if(event.command.get_command_name() == "freesia") {
             event.reply(
