@@ -312,7 +312,7 @@ void FlowerBot::bot() {
         //run registered commands once when bot is connected. prevents commands from being 
         //run repeatedly if bot reconnects.
         if(dpp::run_once<struct register_bot_commands>()) {
-            bot.global_command_create(dpp::slashcommand("Flowers", "Flowers", bot.me.id));
+            bot.global_command_create(dpp::slashcommand("Flowers", "Description about flowers", bot.me.id));
             bot.global_command_create(dpp::slashcommand("Iris", "Information about the Iris flower", bot.me.id));
             bot.global_command_create(dpp::slashcommand("Daisy", "Information about the Daisy flower", bot.me.id));
             bot.global_command_create(dpp::slashcommand("Tulip", "Information about the Tulip flower", bot.me.id));
